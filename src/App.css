@@ -1,0 +1,48 @@
+body {
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+        background-color: #f0f2f5;
+        color: #333;
+      }
+
+      .dashboard-container {
+        display: grid;
+        grid-template-areas:
+          "header"
+          "main-content";
+        grid-template-rows: auto 1fr;
+        min-height: 100vh;
+        padding: 1rem;
+        gap: 1rem;
+        box-sizing: border-box;
+      }
+
+      .main-content-area {
+        display: grid;
+        /* Changed from 300px 1fr to auto 1fr to allow w-96 to control width */
+        grid-template-columns: auto 1fr;
+        gap: 1.5rem;
+        align-items: start;
+      }
+
+      .right-panel-area {
+        display: grid;
+        grid-template-rows: auto auto 1fr;
+        gap: 1.5rem;
+      }
+
+      .metrics-roi-area {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .main-content-area {
+          grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        }
+        .metrics-roi-area {
+          grid-template-columns: 1fr; /* Stack metrics and ROI on smaller screens */
+        }
+      }
